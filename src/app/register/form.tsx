@@ -31,7 +31,7 @@ export default function Form(){
             setError("")
             setInputIsAccurate(true)
         }
-    }, [registerData.email, registerData.password, registerData.confirmPassword])
+    }, [registerData.email, registerData.password, registerData.confirmPassword, emailRegex, passwordRegex])
 
     const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault()

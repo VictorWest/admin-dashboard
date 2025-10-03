@@ -12,33 +12,6 @@ const prisma = new PrismaClient({
 
 
 export async function POST(request: NextRequest) {
-    // try {
-    //     const { email, password } = await request.json()
-
-    //     const hashedPassword = await hash(password, 10)
-
-    //     await prisma.user.create({
-    //         data: {
-    //             email,
-    //             password: hashedPassword
-    //         }
-    //     })
-    //         .then(async () => {
-    //             await prisma.$disconnect()
-    //         })
-    //         .catch(async (e) => {
-    //             // console.log(e);
-    //             await prisma.$disconnect()
-    //             return NextResponse.json({ message: "Email already in use." }, { status: 400 })
-    //         })
-        
-    //     return NextResponse.json({ message: "Successfully saved new user." }, { status: 200 })
-        
-    // } catch (error) {
-    //     console.log({ error })
-    //     return NextResponse.json(error, { status: 400 })
-    // }
-
     const { email, password } = await request.json()
 
     const hashedPassword = await hash(password, 10)

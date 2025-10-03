@@ -27,7 +27,7 @@ const handler = NextAuth({
                 password: {}
             },
 
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 // validate input
                 const user = await prisma.user.findFirst({
                     where: {

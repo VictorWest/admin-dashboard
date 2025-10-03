@@ -6,7 +6,7 @@ import { usStateAndTerritoryInitials } from "../util/data"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import Oval from "react-loading-icons/dist/esm/components/oval"
 import { filterPersonData } from "../util/filter"
-import { reportContextUse } from "../context/ReportContext"
+import { useReportContext } from "../context/ReportContext"
 import { useRouter } from "next/navigation"
 import LogOut from "../components/logout"
 
@@ -22,7 +22,7 @@ export interface PersonData {
 }
 
 export default function Form(){
-    const { setData } = reportContextUse()
+    const { setData } = useReportContext()
     const router = useRouter()
 
     const [ personData, setPersonData ] = useState<PersonData>({ firstName: '', lastName: '', streetNumber: '', city: '', state: '', streetName: '', postalCode: '', phone: ''})

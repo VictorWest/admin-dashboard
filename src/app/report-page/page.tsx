@@ -1,10 +1,10 @@
 "use client"
 import { redirect } from "next/navigation";
 import { PDFReport } from "../components/pdf-report";
-import { reportContextUse } from "../context/ReportContext";
+import { useReportContext } from "../context/ReportContext";
 
 export default function VerificationReportPage() {
-    const { data } = reportContextUse()
+    const { data } = useReportContext()
 
     if (!data){
         redirect("/eps-dashboard")

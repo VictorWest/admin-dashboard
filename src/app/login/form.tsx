@@ -69,7 +69,7 @@ export default function Form(){
             {/* <div className="ml-auto">Forgot Password</div> */}
             <button onClick={handleSubmit} type="submit" className={`bg-white shadow-lg rounded-xs mx-auto text-[#2148C0] w-full h-10 font-bold uppercase cursor-pointer flex justify-center items-center`}>{isLoading ? <Oval height={20} width={20} speed={.5} stroke="#2148C0" /> : "Login"}</button>
 
-            <div className="text-xs">Don't have an account? <Link href="/register">Register here</Link></div>
+            <div className="text-xs">Don&apos;t have an account? <Link href="/register">Register here</Link></div>
         </form>
     )
 }

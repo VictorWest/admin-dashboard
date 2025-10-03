@@ -5,9 +5,6 @@ import DashboardInput from "../components/dashboard-input"
 import { AccountType, accountTypeOptions, canadianProvincesAndTerritories, countryOptions, CountryType, PaymentCycle, paymentCycleOptions, usStateAndTerritoryInitials } from "../util/data"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import Oval from "react-loading-icons/dist/esm/components/oval"
-import { filterPersonData } from "../util/filter"
-import { reportContextUse } from "../context/ReportContext"
-import { useRouter } from "next/navigation"
 import { sendIBVEmail } from "../components/resend"
 import LogOut from "../components/logout"
 
@@ -54,8 +51,6 @@ export const initialCustomerRequest: CustomerRequest = {
 };
 
 export default function Form(){
-    const { setData } = reportContextUse()
-    const router = useRouter()
 
     const [ personData, setPersonData ] = useState<CustomerRequest>(initialCustomerRequest)
     const [ stateFieldIsClicked, setStateFieldIsClicked ] = useState(false)

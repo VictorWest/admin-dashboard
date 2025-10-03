@@ -14,4 +14,10 @@ export const ReportProvider = ({ children }: any) => {
     )
 }
 
-export const reportContextUse = () => useContext(ReportContext)
+export const useReportContext = () => {
+  const context = useContext(ReportContext);
+  if (context === undefined) {
+    throw new Error('useReportContext must be used within a ReportProvider');
+  }
+  return context;
+}
