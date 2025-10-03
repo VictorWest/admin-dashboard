@@ -7,6 +7,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import Oval from "react-loading-icons/dist/esm/components/oval"
 import { sendIBVEmail } from "../components/resend"
 import LogOut from "../components/logout"
+import Link from "next/link"
 
 export interface CustomerRequest {
     FirstName: string;
@@ -242,8 +243,10 @@ export default function Form(){
 
                 <p className="text-red-700 text-xs">{error}</p>
                 <p className="text-green-700 text-xs">{success}</p>
-                <div className="flex flex-row-reverse items-center justify-between">
-                    <button onClick={handleSubmit} type="submit" className={`bg-[#7666c0] text-white cursor-pointer shadow-lg rounded-lg mx-auto w-32 h-10 font-bold uppercase flex justify-center items-center`}>{isLoading ? <Oval height={20} width={20} speed={.5} stroke="#fff" /> : "Submit"}</button>
+                
+                <button onClick={handleSubmit} type="submit" className={`bg-[#7666c0] text-white cursor-pointer shadow-lg rounded-lg mx-auto w-32 h-10 font-bold uppercase flex justify-center items-center`}>{isLoading ? <Oval height={20} width={20} speed={.5} stroke="#fff" /> : "Submit"}</button>
+                <div className="text-center flex flex-col gap-5">
+                    <Link href="/eps-dashboard" className="text-blue-400 text-sm hover:underline">Go to EPS Dashboard</Link>
                     <LogOut />
                 </div>
             </form>
