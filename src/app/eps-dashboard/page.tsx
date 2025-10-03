@@ -9,7 +9,7 @@ export default async function DashboardPage(){
     }
 
     return(
-        <div className="bg-[#e4defe] p-10 text-black">
+        <div className="md:bg-[#e4defe] md:p-10 text-black">
             <Form />
         </div>
     ) 
